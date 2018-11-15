@@ -16,20 +16,20 @@
 // Charcodes go from 65 (A) to 90 (Z)
 
 function rot13(str) {
-	// 1. convert to array of charcodes
-	const charArr = str.split('').map(element => element.charCodeAt());
-	// 2. map the values which are in the characterset to the new charcodes
-	const charCodeArr = charArr.map(element =>
-		element <= 90 && element >= 78
-			? element - 13
-			: element < 78 && element >= 65
-			? 91 - (13 - (element - 65))
-			: element
-	);
-	// 3. convert the charcodearray back to a string
-	const result = charCodeArr
-		.map(element => String.fromCharCode(element))
-		.join('');
+  // 1. convert to array of charcodes
+  const charArr = str.split('').map(element => element.charCodeAt());
+  // 2. map the values which are in the characterset to the new charcodes
+  const charCodeArr = charArr.map(element =>
+    element <= 90 && element >= 78
+      ? element - 13
+      : element < 78 && element >= 65
+      ? 91 - (13 - (element - 65))
+      : element
+  );
+  // 3. convert the charcodearray back to a string
+  const result = charCodeArr
+    .map(element => String.fromCharCode(element))
+    .join('');
 
-	return result;
+  return result;
 }

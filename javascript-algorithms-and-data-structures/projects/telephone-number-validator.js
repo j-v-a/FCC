@@ -22,38 +22,38 @@
 */
 
 function telephoneCheck(str) {
-	// Parentheses checks
-	if (str[0] === '(' && str[str.length - 1] === ')') return false;
-	let parentheses = str.match(/[()]/g);
-	if (parentheses) {
-		// should always be a pair
-		if (parentheses.length % 2 != 0) return false;
-		parentheses.forEach((cur, i) => {
-			if (i % 2 === 0) {
-				// should be "("
-				if (cur != '(') return false;
-			} else {
-				if (cur != ')') return false;
-			}
-		});
-	}
+  // Parentheses checks
+  if (str[0] === '(' && str[str.length - 1] === ')') return false;
+  let parentheses = str.match(/[()]/g);
+  if (parentheses) {
+    // should always be a pair
+    if (parentheses.length % 2 != 0) return false;
+    parentheses.forEach((cur, i) => {
+      if (i % 2 === 0) {
+        // should be "("
+        if (cur != '(') return false;
+      } else {
+        if (cur != ')') return false;
+      }
+    });
+  }
 
-	// Hyphens checks
-	if (str[0] === '-' || str[str.length - 1] === '-') return false;
+  // Hyphens checks
+  if (str[0] === '-' || str[str.length - 1] === '-') return false;
 
-	// Illegal character checks
-	let illegal = str.match(/[^\d()-\s]/g);
-	if (illegal) return false;
+  // Illegal character checks
+  let illegal = str.match(/[^\d()-\s]/g);
+  if (illegal) return false;
 
-	// Number length checks
-	// strip all the fluff
-	let numbersOnly = str.split(/\W/).reduce((acc, cur) => {
-		return acc.concat(cur);
-	});
-	// console.log(str + " : " + numbersOnly);
-	// check for length condition
-	if (numbersOnly.length != 10 && numbersOnly.length != 11) return false;
-	//check for country code condition
-	if (numbersOnly.length === 11 && numbersOnly[0] != 1) return false;
-	return true;
+  // Number length checks
+  // strip all the fluff
+  let numbersOnly = str.split(/\W/).reduce((acc, cur) => {
+    return acc.concat(cur);
+  });
+  // console.log(str + " : " + numbersOnly);
+  // check for length condition
+  if (numbersOnly.length != 10 && numbersOnly.length != 11) return false;
+  //check for country code condition
+  if (numbersOnly.length === 11 && numbersOnly[0] != 1) return false;
+  return true;
 }

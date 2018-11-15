@@ -17,17 +17,17 @@
 */
 
 function cleanString(str) {
-	return str.replace(/[^A-Za-z0-9]+/g, '').toLowerCase();
+  return str.replace(/[^A-Za-z0-9]+/g, '').toLowerCase();
 }
 
 function reverseString(str) {
-	return str
-		.split('')
-		.reverse()
-		.join('');
+  return str
+    .split('')
+    .reverse()
+    .join('');
 }
 
 function palindrome(str) {
-	var cleanedString = cleanString(str);
-	return cleanedString === reverseString(cleanedString);
+  var cleanedString = cleanString(str);
+  return cleanedString === reverseString(cleanedString);
 }
