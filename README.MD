@@ -1,4 +1,4 @@
-# MY FCC certification solutions
+# My FCC (certification) solutions
 
 Hello 👋!
 
